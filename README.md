@@ -17,7 +17,7 @@ Example: $Env:OTEL_EXPORTER_OTLP_ENDPOINT = 'http://otlp-http.rtcalc.com:80'
 
 ### Build
 
-docker build --no-cache -t janben/pydemoapp:X .
+docker build -t janben/pydemoapp:X .
 docker image tag janben/pydemoapp:X janben/pydemoapp:latest
 
 ### Push
@@ -27,6 +27,8 @@ docker image push janben/pydemoapp:X
 docker image push janben/pydemoapp:latest
 
 ## Run
+
+docker run -it janben/pydemoapp:X --name pydemoapp -e OTEL_EXPORTER_OTLP_ENDPOINT='http://otlp-http.rtcalc.com:80' -p 5000:5000
 
 Examples:
 
