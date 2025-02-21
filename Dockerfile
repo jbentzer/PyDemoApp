@@ -1,4 +1,4 @@
-FROM python:3.13
+FROM python:3.13-slim
 ADD pydemoapp.py .
 RUN pip install flask opentelemetry-distro opentelemetry-exporter-otlp
 RUN opentelemetry-bootstrap --action=install
